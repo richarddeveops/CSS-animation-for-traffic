@@ -1,55 +1,40 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-image: url(./Assets/skye.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-} 
+    overflow-x: hidden;            
+}
+
 img {
     width: 100%;
 }
+
+@keyframes drive-left {
+    from { transform: translateX(100vw); }
+    to   { transform: translateX(-100%); }
+}
+@keyframes drive-right {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(100vw); }
+}
+
 .OnE-img {
     width: 10%;
     position: fixed;
 }
 .aeroplane {
-    animation: name duration timing-function delay iteration-count direction fill-mode;
-    animation-name: aeroplane;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: normal; 
-    animation-fill-mode: both;
-    left: 0px;
-}
-@keyframes aeroplane {
-    from{
-        transform: translateX(2000px)
-    }
-    to {
-        transform: translateX(-300px);
-    }
+    animation: drive-left 4s linear infinite;
+    left: 0;
 }
 .helicopter {
-    animation: name duration timing-function delay iteration-count direction fill-mode;
-    animation-name: helicopter;
-    animation-duration: 6s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: both;
-    left: 0px;
-}
-@keyframes helicopter {
-    from{
-        transform: translateX(2000px)
-    }
-    to {
-        transform: translateX(-300px);
-    }
+    animation: drive-left 6s linear infinite;
+    left: 0;
 }
 
 .SECond-div {
@@ -57,218 +42,83 @@ img {
     width: 100%;
     height: 10px;
     margin-top: -40px;
-    .girl {
-        width: 10%;
-        position: absolute;
-        top: 20%;
-    }
-    .boy {
-        width: 10%;
-        position: absolute;
-        top: 23%;
-
-    }
 }
+.SECond-div .girl {
+    width: 10%;
+    position: absolute;
+    top: 20%;
+}
+.SECond-div .boy {
+    width: 10%;
+    position: absolute;
+    top: 23%;
+}
+.girl { animation: drive-right 6s linear infinite; }
+.boy  { animation: drive-left 8s linear infinite; }
 
-
-.road{
+.road {
     height: 26.8vh;
-    width: 100vw;
-    /* position: relative; */
-    /* top: 90px; */
+    width: 100%;
 }
 
-    .girl {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: girl;
-        animation-duration: 6s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-    }
-    @keyframes girl {
-        from{
-            transform: translateX(-300px)
-        }
-        to {
-            transform: translateX(1790px);
-        }
-    }
-    .boy {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: boy;
-        animation-duration: 8s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-    }
-    @keyframes boy {
-        from{
-            transform: translateX(1300px)
-        }
-        to {
-            transform: translateX(0px);
-        }
-    }
+.road-one img {
+    width: 10%;
+    position: absolute;
+}
+.bike  { top: 33%; animation: drive-left 4s linear infinite; }
+.taxi  { top: 39%; animation: drive-left 6s linear infinite; }
+.truck { top: 44%; animation: drive-left 7s linear infinite; }
 
-    .road-one {
-        img {
-            width: 10%;
-            position: absolute;
-            /* top: 40%; */
-        }
-    }
+.middle-road {
+    background-color: #313030;    
+    height: 100px;
+    margin-top: -30px;
+}
+.middle-road img {
+    width: 10%;
+    position: absolute;
+    top: 43%;
+}
+.middle-road .sign-post {
+    top: 54%;
+}
 
-    .bike  {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: bike;
-        animation-duration: 4s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-        top: 33%;
-    }
-    @keyframes bike {
-        from{
-            transform: translateX(1300px)
-        }
-        to {
-            transform: translateX(0px);
-        }
-    }
-    .taxi  {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: taxi;
-        animation-duration: 6s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-        top: 39%;
-    }
-    @keyframes taxi {
-        from{
-            transform: translateX(1300px)
-        }
-        to {
-            transform: translateX(0px);
-        }
-    }
-    .truck  {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: truck;
-        animation-duration: 7s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-        top: 44%;
-    }
-    @keyframes truck {
-        from{
-            transform: translateX(1300px)
-        }
-        to {
-            transform: translateX(0px);
-        }
-    }
+.road-two img {
+    width: 10%;
+    position: absolute;
+}
+.sport-car      { top: 72%; animation: drive-right 2.5s linear infinite; }
+.road-two-taxi  { top: 75%; animation: drive-right 4.9s linear infinite; }
+.road-two-truck { top: 77%; animation: drive-right 7s linear infinite; }
+.bycicle        { top: 79%; animation: drive-right 10s linear infinite; }
 
-    .middle-road {
-        img {
-            width: 10%;
-            position: absolute;
-            top: 43%;
-        }
-        .sign-post{
-            width: 10%;
-            position: absolute;
-            top: 54%;
-        }
-    }
+@media (max-width: 480px) {
+    .OnE-img { width: 15%; }
 
-    .road-two {
-        img{
-            width: 10%;
-            position: absolute;
-            /* top: 70%; */
-        }
-    }
+    .SECond-div { height: 0.7vw; margin-top: -2.6vw; }
+    .SECond-div .girl { width: 15%; top: 11.25vw; }
+    .SECond-div .boy  { width: 15%; top: 12.9vw; }
+
+    .road { height: 15.1vw; }
+
+    .road-one img,
+    .road-two img,
+    .middle-road img { width: 15%; }
+
+    .bike  { top: 18.6vw; }
+    .taxi  { top: 21.9vw; }
+    .truck { top: 24.8vw; }
+
+    .middle-road { height: 6.5vw; margin-top: -2vw; }
+    .middle-road img { top: 24.2vw; }
+    .middle-road .sign-post { top: 30.4vw; }
+
+    .sport-car      { top: 40.5vw; }
+    .road-two-taxi  { top: 42.2vw; }
+    .road-two-truck { top: 43.3vw; }
+    .bycicle        { top: 44.4vw; }
+}
 
 
-    .sport-car {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: sportcar;
-        animation-duration: 2.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-        top: 72%;
-    }
-    @keyframes sportcar {
-        from{
-            transform: translateX(-300px)
-        }
-        to {
-            transform: translateX(1790px);
-        }
-    }
 
-    .road-two-taxi {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: secondtaxi;
-        animation-duration: 4.9s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-        top: 75%;
-    }
-    @keyframes secondtaxi {
-        from{
-            transform: translateX(-300px)
-        }
-        to {
-            transform: translateX(1790px);
-        }
-    }
-
-    .road-two-truck {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        animation-name: trucktwo;
-        animation-duration: 7s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-        top: 77%;
-    }
-    @keyframes trucktwo {
-        from{
-            transform: translateX(-300px)
-        }
-        to {
-            transform: translateX(1790px);
-        }
-    }
-    .bycicle {
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-        top: 79%;
-        animation-name: bycicle;
-        animation-duration: 10s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: both;
-    }
-    @keyframes bycicle {
-        from{
-            transform: translateX(-300px)
-        }
-        to {
-            transform: translateX(1790px);
-        }
-    }
+/* * {    margin: 0px;    padding: 0px;    box-sizing: border-box;}body {    background-image: url(./Assets/skye.jpg);    background-repeat: no-repeat;    background-size: cover;} img {    width: 100%;}.OnE-img {    width: 10%;    position: fixed;}.aeroplane {    animation: name duration timing-function delay iteration-count direction fill-mode;    animation-name: aeroplane;    animation-duration: 4s;    animation-timing-function: linear;    animation-iteration-count: infinite;    animation-direction: normal;     animation-fill-mode: both;    left: 0px;}@keyframes aeroplane {    from{        transform: translateX(2000px)    }    to {        transform: translateX(-300px);    }}.helicopter {    animation: name duration timing-function delay iteration-count direction fill-mode;    animation-name: helicopter;    animation-duration: 6s;    animation-timing-function: linear;    animation-iteration-count: infinite;    animation-direction: normal;    animation-fill-mode: both;    left: 0px;}@keyframes helicopter {    from{        transform: translateX(2000px)    }    to {        transform: translateX(-300px);    }}.SECond-div {    background-color: #58f759;    width: 100%;    height: 10px;    margin-top: -40px;    .girl {        width: 10%;        position: absolute;        top: 20%;    }    .boy {        width: 10%;        position: absolute;        top: 23%;    }}.road{    height: 26.8vh;    width: 100vw;}    .girl {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: girl;        animation-duration: 6s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;    }    @keyframes girl {        from{            transform: translateX(-300px)        }        to {            transform: translateX(1790px);        }    }    .boy {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: boy;        animation-duration: 8s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;    }    @keyframes boy {        from{            transform: translateX(1300px)        }        to {            transform: translateX(0px);        }    }    .road-one {        img {            width: 10%;            position: absolute;        }    }    .bike  {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: bike;        animation-duration: 4s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;        top: 33%;    }    @keyframes bike {        from{            transform: translateX(1300px)        }        to {            transform: translateX(0px);        }    }    .taxi  {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: taxi;        animation-duration: 6s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;        top: 39%;    }    @keyframes taxi {        from{            transform: translateX(1300px)        }        to {            transform: translateX(0px);        }    }    .truck  {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: truck;        animation-duration: 7s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;        top: 44%;    }    @keyframes truck {        from{            transform: translateX(1300px)        }        to {            transform: translateX(0px);        }    }    .middle-road {        img {            width: 10%;            position: absolute;            top: 43%;        }        .sign-post{            width: 10%;            position: absolute;            top: 54%;        }    }    .road-two {        img{            width: 10%;            position: absolute;        }    }    .sport-car {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: sportcar;        animation-duration: 2.5s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;        top: 72%;    }    @keyframes sportcar {        from{            transform: translateX(-300px)        }        to {            transform: translateX(1790px);        }    }    .road-two-taxi {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: secondtaxi;        animation-duration: 4.9s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;        top: 75%;    }    @keyframes secondtaxi {        from{            transform: translateX(-300px)        }        to {            transform: translateX(1790px);        }    }    .road-two-truck {        animation: name duration timing-function delay iteration-count direction fill-mode;        animation-name: trucktwo;        animation-duration: 7s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;        top: 77%;    }    @keyframes trucktwo {        from{            transform: translateX(-300px)        }        to {            transform: translateX(1790px);        }    }    .bycicle {        animation: name duration timing-function delay iteration-count direction fill-mode;        top: 79%;        animation-name: bycicle;        animation-duration: 10s;        animation-timing-function: linear;        animation-iteration-count: infinite;        animation-direction: normal;        animation-fill-mode: both;    }    @keyframes bycicle {        from{            transform: translateX(-300px)        }        to {            transform: translateX(1790px);        }    } */
